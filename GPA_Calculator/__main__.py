@@ -1,9 +1,16 @@
+#!/usr/bin/env python3
 '''
 GPA Calaclator © Marc Frankel 2017 | Georgia Tech
 '''
 import os
+import sys
 
-def mainLoop():
+def main():
+	print("GPA Calaclator © Marc Frankel 2017 | Georgia Tech")
+	print("Please input your command bellow: (help for commands)")
+	if not os.path.exists("data.txt"):
+		file = open("data.txt", "w")
+		file.close()
 	while True:
 		command = input("$:")
 		if(str(command).lower() in ["quit", "q"]):
@@ -86,12 +93,8 @@ def getClasses():
 	return file.readlines()
 
 #Main Init loop
-print("GPA Calaclator © Marc Frankel 2017 | Georgia Tech")
-print("Please input your command bellow: (help for commands)")
-if not os.path.exists("data.txt"):
-	file = open("data.txt", "w")
-	file.close()
-mainLoop()
+if __name__ == "__main__":
+	main()
 
 
 
