@@ -9,24 +9,37 @@ These instructions will help you instal the GPA Calculator on your computer
 ### Prerequisites
 
 * Python 3
+* Git
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
+To install the GPA-Calculator program into your CLI please follow the steps below:
 
-Say what the step will be
+**Clone the Git Repo**
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+```Bash
+git clone https://github.com/marcfrankel/GPA_Calculator.git
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+**Move into the new folder**
+
+```Bash
+cd GPA_Calculator/
+```
+
+**Run the setup.py file**
+
+```Bash
+python3 setup.py install
+```
+
+
+
+Once the install has finished you can invoke the GPA calculator by typing the following into your terminal:
+
+```
+GPA-Calculator
+```
 
 
 ## Built With

@@ -6,7 +6,7 @@ import os
 import sys
 
 def main():
-	print("GPA Calaclator © Marc Frankel 2017 | Georgia Tech")
+	print("GPA Calaclator (c) Marc Frankel 2017 | Georgia Tech")
 	print("Please input your command bellow: (help for commands)")
 	if not os.path.exists("data.txt"):
 		file = open("data.txt", "w")

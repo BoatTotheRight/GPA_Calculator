@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='GPA_Calculator',
-    version='0.8.1',
+    version='0.8.5',
     author='Marc Frankel',
     packages=['GPA_Calculator'],
     entry_points={
