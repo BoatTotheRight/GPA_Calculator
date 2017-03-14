@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 '''
-GPA Calaclator © Marc Frankel 2017 | Georgia Tech
+GPA Calaclator (c) Marc Frankel 2017 | Georgia Tech
 '''
 import os
 import sys
+filename = os.path.expanduser("~") + "/GPA_Calculator/data/data.dat"
 
 def main():
 	print("GPA Calaclator (c) Marc Frankel 2017 | Georgia Tech")
 	print("Please input your command bellow: (help for commands)")
-	if not os.path.exists("data.txt"):
-		file = open("data.txt", "w")
+	if not os.path.exists(filename):
+		os.makedirs(os.path.dirname(filename), exist_ok=True)
+		file = open(filename, "w")
 		file.close()
 	while True:
 		command = input("$:")
@@ -40,10 +42,10 @@ def main():
 				line = line[:-1].split(",")
 				print(line[0] + " | " + line[1] + " | " + line[2].upper())
 		else:
-			print("Error: Command '" + command + "' not found")
+			print("Error: Command '" + command + "' not found. Type 'help' for commands")
 
 def calculate():
-	file = open("data.txt", "r")
+	file = open(filename, "r")
 	total_hours = 0
 	quality_points = 0
 	class_list = file.readlines()
@@ -65,7 +67,7 @@ def calculate():
 	return gpa
 		
 def addClass():
-	file = open("data.txt", "a")
+	file = open(filename, "a")
 	class_name = str(input("Please enter the class name: "))
 	credit_hours = str(input("Please enter the credit hours: "))
 	grade = str(input("Please enter your grade: ")).lower()
@@ -74,7 +76,7 @@ def addClass():
 	return class_name
 
 def deleteClass():
-	file = open("data.txt", "r")
+	file = open(filename, "r")
 	class_name = str(input("Please enter the class to delete: "))
 	lines = file.readlines()
 	found = 0
@@ -83,18 +85,15 @@ def deleteClass():
 			lines.pop(lines.index(line))
 			found = 1
 	file.close()
-	file = open("data.txt", "w")
+	file = open(filename, "w")
 	for line in lines:
 		file.write(line)
 	file.close()
 	return [found, class_name]
 def getClasses():
-	file = open("data.txt", "r")
+	file = open(filename, "r")
 	return file.readlines()
 
 #Main Init loop
 if __name__ == "__main__":
 	main()
-
-
-
