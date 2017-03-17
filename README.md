@@ -1,10 +1,10 @@
 # Georgia Tech GPA Calculator
 
-A simple python tool to keep track of and calculate your Georgia Tech GPA based on your credit hours taken and your grade in the class.
+A simple python tool to keep track of and calculate your Georgia Tech GPA based on your credit hours taken and your grade in the class. The program is fairly robust and very hackable.
 
 ## Getting Started
 
-These instructions will help you instal the GPA Calculator on your computer
+These instructions will help you install the GPA Calculator on your computer
 
 ### Prerequisites
 
@@ -13,7 +13,7 @@ These instructions will help you instal the GPA Calculator on your computer
 
 ### Installing
 
-To install the GPA-Calculator program into your CLI please follow the steps below:
+To install the GPA-Calculator program into your CLI (terminal/cmd) please follow the steps below:
 
 **Clone the Git Repo**
 
@@ -40,6 +40,8 @@ Once the install has finished you can invoke the GPA calculator by typing the fo
 ```
 GPA-Calculator
 ```
+
+*To update the GPA-Calculator tool simply repeat the steps above and re-run the install*
 
 
 ## Built With
