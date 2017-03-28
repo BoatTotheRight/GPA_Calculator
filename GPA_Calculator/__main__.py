@@ -205,7 +205,7 @@ def edit():
 	if item_edit in ["1","name"]:
 		new_item = str(input("Please enter the new name: "))
 		mylist[0] = new_item
-		message = class_name + "was successfully replaced with" + new_item
+		message = class_name + " was successfully replaced with " + new_item
 	elif item_edit in ["2", "credit hours"]:
 		new_item = str(input("Please enter the new credit hours: "))
 		mylist[1] = new_item
