@@ -39,11 +39,11 @@ def main():
 		elif command in ["f","forgive"]:
 			response = freshman_forgive()
 			if response[0] == 1:
-				print("{} was successfully replaced".format(response[1]))
+				print(response[1] + " was successfully replaced")
 			elif response[0] == 2:
-				print("Unable to replace, {} was not taken at Georgia Tech".format(response[1]))
+				print("Unable to replace, " + response[1] + " was not taken at Georgia Tech")
 			else:
-				print("The class: {} was not found".format(response[1]))
+				print("The class: " + response[1] +" was not found")
 		elif command in ["calculate", "c"]:
 			typeCalc = str(input("Tech or Hope: "))
 			if typeCalc.lower() in ['tech', 't']:
@@ -64,9 +64,9 @@ def main():
 		elif command in ["e","edit"]:
 			response = edit()
 			if response[0] == 1:
-				print("{}".format(response[1]))
+				print(response[1])
 			else:
-				print("The class: {} was not found".format(response[2]))
+				print("The class: " + response[2] +" was not found")
 		else:
 			print("Error: Command '" + command + "' not found. Type 'help' for commands")
 
@@ -178,8 +178,8 @@ def freshman_forgive():
 				found = 2
 	if found == 1:
 		del lines[location]
-		old_entry = "*{}*,{},{},n\n".format(mylist[0],mylist[1],mylist[2])
-		new_entry = "{},{},{},y\n".format(mylist[0],mylist[1],new_grade)
+		old_entry = "*" + mylist[0] + "*," + mylist[1] + "," + mylist[2] + ",n\n"
+		new_entry = mylist[0] + "," + mylist[1] + "," + new_grade + ",y\n"
 		lines.append(new_entry)
 		lines.insert(location,old_entry)
 	file = open(filename, 'w')
@@ -195,7 +195,7 @@ def edit():
 	lines = file.readlines()
 	file.close()
 	found = 0
-	message = "{} was successfully updated".format(class_name)
+	message = class_name + " was successfully updated"
 	for line in lines:
 		if (class_name == line.split(',')[0]):
 			mylist = line.split(',')
@@ -205,7 +205,7 @@ def edit():
 	if item_edit in ["1","name"]:
 		new_item = str(input("Please enter the new name: "))
 		mylist[0] = new_item
-		message = "{} was successfully replaced with {}".format(class_name,new_item)
+		message = class_name + "was successfully replaced with" + new_item
 	elif item_edit in ["2", "credit hours"]:
 		new_item = str(input("Please enter the new credit hours: "))
 		mylist[1] = new_item
@@ -217,7 +217,7 @@ def edit():
 		mylist[3] = new_item
 	if found == 1:
 		del lines[location]
-		new_entry = "{},{},{},{}\n".format(mylist[0],mylist[1],mylist[2],mylist[3])
+		new_entry = mylist[0] + "," + mylist[1] + "," + mylist[2] + "," + mylist[3] + "\n"
 		lines.insert(location,new_entry)
 	file = open(filename,'w')
 	for line in lines:
